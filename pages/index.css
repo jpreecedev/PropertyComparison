@@ -26,7 +26,7 @@ legend {
   padding-right: .5rem;
 }
 
-input[type="submit"], input[type="reset"] {
+button[type="submit"], button[type="reset"], button {
   padding: 1rem 1.25rem !important;
   font-size: 1rem !important;
   cursor: pointer;

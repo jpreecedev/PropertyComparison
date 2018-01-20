@@ -1,8 +1,11 @@
 import React from 'react'
+import withRedux from 'next-redux-wrapper'
 import Head from 'next/head'
+
 import AddProperty from '../components/AddProperty'
 import Prospects from '../components/Prospects'
 
+import { initStore } from '../store'
 import {stylesheet, classNames} from './index.css'
 
 const Index = () => (
@@ -19,4 +22,4 @@ const Index = () => (
   </main>
 )
 
-export default Index
+export default withRedux(initStore)(Index)

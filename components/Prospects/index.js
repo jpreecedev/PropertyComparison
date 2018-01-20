@@ -1,14 +1,18 @@
 import React from 'react'
+import { connect } from 'react-redux'
+
 import Head from 'next/head'
 import classes from 'classnames'
 
 import {stylesheet, classNames} from './styles.css'
 
-const Prospects = () => {
+const Prospects = props => {
   const containerClassNames = classes(
     'container',
     classNames.container
   )
+
+  const { allProspects } = props
 
   return (
     <div className={containerClassNames}>
@@ -39,13 +43,17 @@ const Prospects = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>123 Bob Street</td>
-                <td>£100,000</td>
-                <td>£2,500</td>
-                <td>5%</td>
-                <td>10%</td>
-              </tr>
+              {
+                allProspects.map((prospect, index) => {
+                  return <tr key={index}>
+                    <td>{ prospect.address }</td>
+                    <td>{ prospect.purchasePrice }</td>
+                    <td>£2,000</td>
+                    <td>5%</td>
+                    <td>10%</td>
+                  </tr>
+                })
+              }
             </tbody>
           </table>
         </div>
@@ -54,4 +62,10 @@ const Prospects = () => {
   )
 }
 
-export default Prospects
+const mapStateToProps = store => {
+  return {
+    allProspects: store.allProspects
+  }
+}
+
+export default connect(mapStateToProps)(Prospects)
