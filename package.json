@@ -41,7 +41,7 @@
   },
   "homepage": "https://github.com/jpreecedev/PropertyComparison#readme",
   "dependencies": {
-    "bootstrap": "^4.0.0",
+    "chota": "^0.4.2",
     "next": "^4.2.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -75,6 +75,7 @@
     "mocha": "^4.0.1",
     "mochawesome": "^1.5.5",
     "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.10",
     "postcss-modules": "^1.1.0",
     "react-css-modules": "^4.7.1",
