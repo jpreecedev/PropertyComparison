@@ -1,10 +1,12 @@
 import React from 'react'
 import Head from 'next/head'
+import AddProperty from '../components/AddProperty'
+import Prospects from '../components/Prospects'
 
 import {stylesheet, classNames} from './index.css'
 
 const Index = () => (
-  <div>
+  <main>
     <Head>
       <title>Property Comparison</title>
       <meta charSet='utf-8' />
@@ -12,7 +14,9 @@ const Index = () => (
     </Head>
     <h1 className={classNames.header}>Property Comparison</h1>
     <p className={classNames.lead}>A useful tool for comparing properties against each other and your property investment goals</p>
-  </div>
+    <AddProperty />
+    <Prospects />
+  </main>
 )
 
 export default Index

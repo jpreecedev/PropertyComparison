@@ -1,0 +1,24 @@
+.addon {
+  position: relative;
+}
+
+.prefix {
+  position: absolute;
+  padding: 8px 10px 8px 12px;
+  font-style: normal;
+
+  & + input {
+    padding-left: 25px !important;
+  }
+}
+
+.suffix {
+  position: absolute;
+  padding: 8px 10px 8px 12px;
+  font-style: normal;
+  right: 0;
+
+  & + input {
+    padding-right: 25px !important;
+  }
+}

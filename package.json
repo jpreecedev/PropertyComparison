@@ -42,7 +42,9 @@
   "homepage": "https://github.com/jpreecedev/PropertyComparison#readme",
   "dependencies": {
     "chota": "^0.4.2",
+    "classnames": "^2.2.5",
     "next": "^4.2.3",
+    "normalize.css": "^7.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
