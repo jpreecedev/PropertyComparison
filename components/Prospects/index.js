@@ -13,7 +13,6 @@ const Prospects = props => {
   )
 
   const { allProspects } = props
-
   return (
     <div className={containerClassNames}>
       <Head>
@@ -64,7 +63,7 @@ const Prospects = props => {
 
 const mapStateToProps = store => {
   return {
-    allProspects: store.allProspects
+    allProspects: store.prospects.allProspects
   }
 }
 

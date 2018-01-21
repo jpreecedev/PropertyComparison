@@ -1,24 +1,13 @@
 import React from 'react'
 import Head from 'next/head'
 
+import { Field } from 'redux-form'
+
 import {stylesheet, classNames} from './styles.css'
 
 const TextField = props => {
-  const { type, id, label, prefix, suffix, placeholder, value } = props
+  const { type, id, label, prefix, suffix, placeholder } = props
   const addonClassName = prefix ? classNames.prefix : suffix ? classNames.suffix : null
-
-  const inputField = <input id={id}
-    type={type}
-    placeholder={placeholder}
-    value={value}
-    onChange={event => props.onChange(event.target.value)} />
-
-  const textareaField = <textarea id={id}
-    placeholder={placeholder}
-    rows='3'
-    value={value}
-    onChange={event => props.onChange(event.target.value)} />
-
   return (
     <div>
       <Head>
@@ -27,7 +16,10 @@ const TextField = props => {
       <label htmlFor={id}>{ label }</label>
       <div className={classNames.addon}>
         { addonClassName && <i className={addonClassName}>{ prefix || suffix }</i> }
-        { type !== 'textarea' ? inputField : textareaField }
+        <Field name={id}
+          component={type === 'textarea' ? 'textarea' : 'input'}
+          type={type}
+          placeholder={placeholder} />
       </div>
     </div>
   )
