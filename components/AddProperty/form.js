@@ -5,7 +5,7 @@ import { reduxForm } from 'redux-form'
 import TextField from '../TextField'
 
 let Form = props => {
-  const { handleSubmit, pristine, reset, submitting } = props
+  const { handleSubmit, reset, submitting } = props
 
   return <form onSubmit={handleSubmit}>
     <fieldset>
@@ -61,7 +61,7 @@ let Form = props => {
           <TextField type='number'
             id='repairsContingency'
             label='Repairs contingency'
-            prefix='£'
+            suffix='%'
             placeholder='Repairs contingency' />
         </div>
         <div className='col'>

@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import Head from 'next/head'
 import classes from 'classnames'
 
+import { currency, percentage } from '../../utils/number'
 import {stylesheet, classNames} from './styles.css'
 
 const Prospects = props => {
@@ -24,21 +25,12 @@ const Prospects = props => {
           <table>
             <thead>
               <tr>
-                <th>
-                  Address
-                </th>
-                <th>
-                  Purchase price
-                </th>
-                <th>
-                  Annual profit
-                </th>
-                <th>
-                  Net yield
-                </th>
-                <th>
-                  Return on investment
-                </th>
+                <th>Address</th>
+                <th>Purchase price</th>
+                <th>Deposit</th>
+                <th>Annual profit</th>
+                <th>Net yield</th>
+                <th>Return on investment</th>
               </tr>
             </thead>
             <tbody>
@@ -46,10 +38,11 @@ const Prospects = props => {
                 allProspects.map((prospect, index) => {
                   return <tr key={index}>
                     <td>{ prospect.address }</td>
-                    <td>{ prospect.purchasePrice }</td>
-                    <td>£2,000</td>
-                    <td>5%</td>
-                    <td>10%</td>
+                    <td>{ currency(prospect.purchasePrice, '£') }</td>
+                    <td>{ currency(prospect.deposit, '£') }</td>
+                    <td>{ currency(prospect.annualProfit, '£') }</td>
+                    <td>{ percentage(prospect.netYield) }</td>
+                    <td>{ percentage(prospect.returnOnInvestment) }</td>
                   </tr>
                 })
               }

@@ -7,7 +7,7 @@ export const defaultState = {
       monthlyRent: 550,
       mortgageRate: 5,
       managementRate: 10,
-      repairsContingency: 500,
+      repairsContingency: 5,
       serviceCharge: 150,
       insurance: 300
     },
