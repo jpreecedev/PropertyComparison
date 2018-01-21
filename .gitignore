@@ -264,5 +264,6 @@ wwwroot/static/uploads
 
 *.mp4
 cypress/report
+cypress/screenshots
 
 .next
