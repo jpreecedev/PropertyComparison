@@ -5,6 +5,13 @@ import { Field } from 'redux-form'
 
 import {stylesheet, classNames} from './styles.css'
 
+const parse = (value, type) => {
+  if (type === 'number') {
+    return Number(value)
+  }
+  return value
+}
+
 const TextField = props => {
   const { type, id, label, prefix, suffix, placeholder } = props
   const addonClassName = prefix ? classNames.prefix : suffix ? classNames.suffix : null
@@ -19,7 +26,8 @@ const TextField = props => {
         <Field name={id}
           component={type === 'textarea' ? 'textarea' : 'input'}
           type={type}
-          placeholder={placeholder} />
+          placeholder={placeholder}
+          parse={value => parse(value, type)} />
       </div>
     </div>
   )

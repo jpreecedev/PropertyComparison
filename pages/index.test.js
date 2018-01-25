@@ -7,6 +7,6 @@ test('check that title is set', () => {
     <Index />
   )
 
-  const header = wrapper.find('h1').text()
+  const header = wrapper.find('h1').first().text()
   expect(header).toBe('Property Comparison')
 })
